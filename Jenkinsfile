@@ -1,14 +1,18 @@
 pipeline {
-   environment {
-     HELLO = "Hello World"
-   }
+    environment {
+        HELLO = "Hello World"
+    }
 
-   agent none
-   stage {
-       steps("first") {
-           script {
-           sh "echo ${HELLO}"
-           }
-       }
-   }
+    agent none
+    
+        stages {
+        stage("first") {
+            steps {
+                script {
+                sh 'echo $HELLO'
+                }
+            }
+        }
+    }
 }
+
