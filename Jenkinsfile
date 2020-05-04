@@ -1,14 +1,12 @@
 pipeline {
-  agent any 
-  stages {
-    stage(‘Build’) {
-      steps {
-        sh ‘echo “Hello World”’
-        sh ‘“
-                  echo “Multiline shell steps works too”
-                  ls -lah
-               “‘
-      }
-    }
-  }
+   environment {
+     HELLO = "Hello World"
+   }
+
+   agent none
+   stages {
+       stage("first") {
+           sh "echo ${HELLO}"
+       }
+   }
 }
