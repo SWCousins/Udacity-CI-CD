@@ -3,14 +3,13 @@ pipeline {
         HELLO = "Hello World"
     }
 
-    agent none
+    agent any
     
-        stages {
-        stage("first") {
+    stages {
+        stage("foo") {
             steps {
-                script {
-                sh 'echo $HELLO'
-                }
+                echo "hello world"
+                
             }
         }
     }
