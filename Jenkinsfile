@@ -6,7 +6,9 @@ pipeline {
    agent none
    stages {
        stage("first") {
+           script {
            sh "echo ${HELLO}"
+           }
        }
    }
 }
