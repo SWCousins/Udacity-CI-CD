@@ -5,7 +5,7 @@ pipeline {
 
    agent none
    stages {
-       stage("first") {
+       steps("first") {
            script {
            sh "echo ${HELLO}"
            }
